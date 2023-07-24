@@ -7,6 +7,7 @@ import authRoutes from './routes/authRouter.js';
 import categoryRoute from "./routes/categoryRoutes.js";
 import productRoute from "./routes/productRoutes.js"
 import path from "path";
+import { fileURLToPath } from "url"
 
 import cors from "cors"
 
@@ -19,7 +20,8 @@ const app = express();
 connectDB();
 
 // ENABLE CORS (CORS USED FOR PROVIDING PATH TO CONNECT TWO DIFF HOSTS WITHOU CROSS ORIGIN ERROR)
-
+const __filename=fileURLToPath(import.meta.url);
+const __dirname=path.dirname(__filename);
 
 
 // MIDDLEWARES
